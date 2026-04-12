@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Product Detail</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 p-6">
+
+<!-- HEADER -->
+<div class="flex justify-between items-center mb-6">
+  <h1 id="title" class="text-3xl font-bold">Product</h1>
+
+  <button onclick="goBack()" class="bg-gray-800 text-white px-4 py-2 rounded">
+    ← Back
+  </button>
+</div>
+
+<!-- SETTINGS -->
+<div class="bg-white p-4 rounded-xl shadow mb-4 flex gap-4 flex-wrap">
+
+  <label><input type="checkbox" id="showShop" checked> Shop</label>
+  <label><input type="checkbox" id="showPrice" checked> Price</label>
+  <label><input type="checkbox" id="showSize" checked> Size</label>
+  <label><input type="checkbox" id="showColor" checked> Color</label>
+
+  <input id="qtyAll" type="number" value="1" class="border p-2 rounded w-20" />
+  <button onclick="printSelected()" class="bg-green-600 text-white px-4 py-2 rounded">
+    🖨 Print Selected
+  </button>
+
+</div>
+
+<!-- VARIANTS TABLE -->
+<div class="bg-white rounded-xl shadow overflow-hidden">
+
+<table class="w-full text-left">
+  <thead class="bg-gray-200">
+    <tr>
+      <th class="p-3"><input type="checkbox" onclick="toggleAll(this)"></th>
+      <th class="p-3">Size</th>
+      <th class="p-3">Color</th>
+      <th class="p-3">Price</th>
+      <th class="p-3">Stock</th>
+      <th class="p-3">Barcode</th>
+      <th class="p-3">Qty</th>
+      <th class="p-3 text-center">Action</th>
+    </tr>
+  </thead>
+
+  <tbody id="table"></tbody>
+</table>
+
+</div>
+
+<script src="js/product-detail.js"></script>
+
+</body>
+</html>

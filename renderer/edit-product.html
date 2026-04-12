@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Product</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 p-6">
+
+  <!-- HEADER -->
+  <div class="flex justify-between items-center mb-6">
+    <h1 class="text-3xl font-bold">✏️ Edit Product</h1>
+    <button onclick="goBack()" class="bg-gray-800 text-white px-4 py-2 rounded">← Back</button>
+  </div>
+
+  <!-- PRODUCT INFO -->
+  <div class="bg-white p-4 rounded shadow mb-6">
+    <input id="name" placeholder="Product Name" class="p-3 border mb-3 w-full rounded">
+    <input id="article" placeholder="Article" class="p-3 border w-full rounded" oninput="updateAllBarcodes()">
+  </div>
+
+  <!-- VARIANTS -->
+  <div class="bg-white p-4 rounded shadow">
+    <h2 class="text-xl font-semibold mb-3">Variants</h2>
+    <div id="variants"></div>
+
+    <button onclick="addVariant()" class="bg-blue-500 text-white px-4 py-2 rounded mt-3">+ Add Variant</button>
+  </div>
+
+  <!-- SAVE -->
+  <button onclick="updateProduct()" id="saveBtn" class="bg-green-600 text-white px-6 py-3 rounded mt-6">
+    Save Changes
+  </button>
+
+  <div id="toast" class="fixed top-5 right-5 hidden px-6 py-3 rounded shadow text-white"></div>
+
+  <script src="js/toast.js"></script>
+  <script src="js/edit-product.js"></script>
+</body>
+</html>

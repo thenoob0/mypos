@@ -1,0 +1,74 @@
+<!-- ================= PREMIUM ADD PRODUCT UI ================= -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Product</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-br from-slate-100 to-slate-200 min-h-screen p-6 font-sans">
+
+<div class="max-w-6xl mx-auto">
+
+  <!-- HEADER -->
+  <div class="flex justify-between items-center mb-6">
+    <h1 class="text-3xl font-bold text-gray-800">➕ Add Product</h1>
+
+    <button onclick="goBack()" 
+      class="bg-gray-800 hover:bg-black text-white px-5 py-2 rounded-xl">
+      ← Back
+    </button>
+  </div>
+
+  <!-- MESSAGE -->
+  <div id="messageBox" class="hidden p-3 rounded mb-4 text-white"></div>
+
+  <!-- CARD -->
+  <div class="bg-white rounded-3xl shadow-xl p-6 space-y-6">
+
+    <!-- PRODUCT INFO -->
+    <div class="grid grid-cols-2 gap-4">
+      <input id="name" placeholder="Product Name"
+        class="p-4 text-lg border rounded-xl focus:ring-2 focus:ring-blue-400 outline-none" />
+
+      <input id="article" placeholder="Article Code"
+        class="p-4 text-lg border rounded-xl focus:ring-2 focus:ring-blue-400 outline-none" />
+    </div>
+
+    <!-- VARIANT HEADER -->
+    <div class="flex justify-between items-center">
+      <h2 class="text-xl font-semibold text-gray-700">Variants</h2>
+
+      <button onclick="addVariant()"
+        class="bg-blue-500 hover:bg-blue-600 text-white px-5 py-2 rounded-xl text-lg">
+        + Add Variant
+      </button>
+    </div>
+
+    <!-- LABELS -->
+    <div class="grid grid-cols-7 gap-3 text-sm text-gray-500 font-semibold px-2">
+      <div>Size</div>
+      <div>Color</div>
+      <div>Cost</div>
+      <div>Price</div>
+      <div>Stock</div>
+      <div>Barcode</div>
+      <div>Action</div>
+    </div>
+
+    <!-- VARIANTS -->
+    <div id="variants" class="space-y-3"></div>
+
+    <!-- SAVE BUTTON -->
+    <button onclick="saveProduct()"
+      class="w-full bg-green-500 hover:bg-green-600 text-white text-xl font-bold py-4 rounded-2xl shadow">
+      Save Product
+    </button>
+
+  </div>
+
+</div>
+<script src="js/add-product.js"></script>
+
+</body>
+</html>

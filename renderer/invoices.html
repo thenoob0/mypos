@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Invoices</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 p-6">
+
+<!-- HEADER -->
+<div class="flex justify-between items-center mb-6">
+  <h1 class="text-3xl font-bold">🧾 Invoices</h1>
+
+  <button onclick="goBack()"
+    class="bg-gray-800 text-white px-4 py-2 rounded-lg">
+    ← Back
+  </button>
+</div>
+
+<!-- 🔥 TOP ANALYTICS -->
+<div class="grid grid-cols-3 gap-4 mb-6">
+  <div class="bg-white p-4 rounded-xl shadow">
+    <div class="text-gray-500">Today Sales</div>
+    <div id="todaySales" class="text-2xl font-bold">0</div>
+  </div>
+
+  <div class="bg-white p-4 rounded-xl shadow">
+    <div class="text-gray-500">Invoices</div>
+    <div id="totalInvoices" class="text-2xl font-bold">0</div>
+  </div>
+
+  <div class="bg-white p-4 rounded-xl shadow">
+    <div class="text-gray-500">Avg Sale</div>
+    <div id="avgSale" class="text-2xl font-bold">0</div>
+  </div>
+</div>
+
+<!-- 🔍 SEARCH + FILTER -->
+<div class="flex gap-3 mb-4">
+
+  <input 
+    id="searchInput"
+    placeholder="Search invoice..."
+    oninput="handleSearch()"
+    class="p-3 border rounded w-full"
+  />
+
+  <select id="filter" onchange="handleSearch()"
+    class="p-3 border rounded">
+    <option value="">All</option>
+    <option value="today">Today</option>
+    <option value="week">This Week</option>
+    <option value="month">This Month</option>
+  </select>
+
+</div>
+
+<!-- TABLE -->
+<div class="bg-white rounded-xl shadow overflow-hidden">
+
+<table class="w-full text-left">
+  <thead class="bg-gray-200">
+    <tr>
+      <th class="p-3">Invoice</th>
+      <th class="p-3">Date & Time</th>
+      <th class="p-3">Total</th>
+      <th class="p-3 text-center">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody id="table"></tbody>
+</table>
+
+</div>
+
+<!-- PAGINATION -->
+<div class="flex justify-center mt-4 gap-2" id="pages"></div>
+
+<script src="js/invoices.js"></script>
+
+</body>
+</html>

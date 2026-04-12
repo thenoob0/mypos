@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Products</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 p-6">
+
+<div class="max-w-7xl mx-auto">
+
+  <div class="flex justify-between items-center mb-6">
+
+  <h1 class="text-3xl font-bold">📦 Product List</h1>
+
+  <button onclick="goBack()"
+    class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700">
+    ← Back
+  </button>
+
+</div>
+
+  <!-- CONTROLS -->
+  <div class="bg-white p-4 rounded-xl shadow mb-4 flex flex-wrap gap-3 justify-between">
+
+    <input id="search" placeholder="Search name / article / barcode..."
+      class="p-2 border rounded w-80" oninput="loadProducts()" />
+
+    <div class="flex gap-2">
+
+      <select id="sort" onchange="loadProducts()" class="p-2 border rounded">
+        <option value="latest">Latest</option>
+        <option value="name">Name</option>
+        <option value="stock">Stock</option>
+      </select>
+
+      <select id="filter" onchange="loadProducts()" class="p-2 border rounded">
+        <option value="all">All</option>
+        <option value="low">Low Stock</option>
+        <option value="out">Out of Stock</option>
+      </select>
+
+      <select id="limit" onchange="changeLimit()" class="p-2 border rounded">
+        <option value="10">10</option>
+        <option value="20">20</option>
+        <option value="50">50</option>
+      </select>
+
+    </div>
+  </div>
+
+  <!-- TABLE -->
+  <div class="bg-white rounded-xl shadow overflow-hidden">
+  <table class="w-full text-sm table-auto">
+    
+    <thead class="bg-gray-200">
+      <tr>
+        <th class="p-3 text-left">Name</th>
+        <th class="p-3 text-left">Article</th>
+        <th class="p-3 text-left">Stock</th>
+        <th class="p-3 text-left">Variants</th>
+        <th class="p-3 text-center">Actions</th>
+      </tr>
+    </thead>
+
+    <tbody id="productTable"></tbody>
+
+  </table>
+</div>
+
+  <!-- PAGINATION -->
+  <div class="flex justify-between items-center mt-4">
+    <button onclick="prevPage()" class="px-4 py-2 bg-gray-300 rounded">Prev</button>
+    <div id="pages" class="flex gap-2"></div>
+    <button onclick="nextPage()" class="px-4 py-2 bg-gray-300 rounded">Next</button>
+  </div>
+
+</div>
+
+<!-- TOAST -->
+<div id="toast" class="fixed top-5 right-5 hidden px-6 py-3 rounded text-white"></div>
+
+<script src="js/toast.js"></script>
+<script src="js/product-list.js"></script>
+
+</body>
+</html>

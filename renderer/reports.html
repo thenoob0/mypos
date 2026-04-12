@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Reports</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 p-6">
+
+<!-- HEADER -->
+<div class="flex justify-between items-center mb-6">
+  <h1 class="text-3xl font-bold">📊 Reports</h1>
+
+  <button onclick="goBack()"
+    class="bg-gray-800 text-white px-4 py-2 rounded-lg">
+    ← Back
+  </button>
+</div>
+
+<!-- FILTER -->
+<div class="mb-6">
+  <select id="filter" onchange="loadReports()"
+    class="p-3 border rounded-lg">
+    <option value="today">Today</option>
+    <option value="week">This Week</option>
+    <option value="month">This Month</option>
+  </select>
+</div>
+
+<!-- CARDS -->
+<div class="grid grid-cols-4 gap-4">
+
+  <div class="bg-white p-5 rounded-xl shadow">
+    <div class="text-gray-500">Total Sales</div>
+    <div id="totalSales" class="text-3xl font-bold">0</div>
+  </div>
+
+  <div class="bg-white p-5 rounded-xl shadow">
+    <div class="text-gray-500">Invoices</div>
+    <div id="totalInvoices" class="text-3xl font-bold">0</div>
+  </div>
+
+  <div class="bg-white p-5 rounded-xl shadow">
+    <div class="text-gray-500">Avg Sale</div>
+    <div id="avgSale" class="text-3xl font-bold">0</div>
+  </div>
+
+  <div class="bg-white p-5 rounded-xl shadow">
+    <div class="text-gray-500">Discount</div>
+    <div id="totalDiscount" class="text-3xl font-bold">0</div>
+  </div>
+  <div class="bg-white p-5 rounded-xl shadow">
+  <div class="text-gray-500">Profit</div>
+  <div id="profit" class="text-3xl font-bold text-green-600">0</div>
+</div>
+
+</div>
+
+<script src="js/reports.js"></script>
+
+</body>
+</html>
